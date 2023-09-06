@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
+  
+  
 <head>
   <title>Party Planning Committee</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
+  
 </head>
-<body>
 
-  <header>
+<body>
+  <div id="balloon-container" z-index="100"></div>
     <h1>Party Planning Committee</h1>
     <nav>
       <a href="index.html">Home</a>
@@ -16,20 +19,132 @@
       <a href="faq.html">FAQ</a>
       <a href="regpay.html">Registration and Rental</a>
     </nav>
-  </header>
 
-  <main>
     <section id="home">
       <h2>About Us</h2>
       <p>We are a party planning company that specializes in creating unforgettable events for all ages. We offer a wide range of services, including venue selection, catering, entertainment, and more. Our team of experienced professionals will work with you to create a party that is perfect for your needs and budget.</p>
       <p>Contact us today to learn more about our services and to start planning your next party!</p>
+      
     </section>
-
-  </main>
-
+  </body>
+  
   <footer>
     <p>Copyright © 2023 Party Planning Committee</p>
   </footer>
+  // Java
+  <script>
+    const balloonContainer = document.getElementById("balloon-container");
+  
+  function random(num) {
+  return Math.floor(Math.random() * num);d
+  }
+  
+  const colors = [
+  { r: 121, g: 78, b: 58 },
+  { r: 101, g: 96, b: 89 },
+];
 
-</body>
+function getRandomStyles() {
+  var color = colors[Math.floor(Math.random() * colors.length)];
+  var r = color.r;
+  var g = color.g;
+  var b = color.b;
+  var mt = random(200);
+  var ml = random(50);
+  var dur = random(5) + 5;
+  return `
+    background-color: rgba(${r},${g},${b},0.7);
+    box-shadow: inset -7px -3px 10px rgba(${r - 10},${g - 10},${b - 10},0.7);
+    margin: ${mt}px 0 0 ${ml}px;
+    animation: float ${dur}s ease-in infinite
+  `;
+}
+  
+  function createBalloons(num) {
+  for (var i = num; i > 0; i--) {
+    var balloon = document.createElement("div");
+    balloon.className = "balloon";
+    balloon.style.cssText = getRandomStyles();
+    balloon.style.zIndex = 200;
+    balloonContainer.append(balloon);
+  
+    setTimeout(removeBalloons, 5000);
+  }
+  }
+  
+  function removeBalloons() {
+  balloonContainer.style.opacity = 0;
+  setTimeout(() => {
+    balloonContainer.remove()
+  }, 500)
+  }
+  
+  window.addEventListener("load", () => {
+  createBalloons(40)
+  });
+  
+  window.addEventListener("click", () => {
+  removeBalloons();
+  });
+  </script>
+  //CSS 
+  <style>
+    body {
+      margin: 0;
+      background-color: transparent;
+    }
+  
+    #balloon-container {
+     position: absolute; top: 0;
+      height: 100vh;
+      z-index: 100;
+      padding: 1em;
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      transition: opacity 500ms;
+    }
+  
+    .balloon {
+      height: 125px;
+      width: 105px;
+      border-radius: 75% 75% 70% 70%;
+    }
+  
+    .balloon:before {
+      content: "";
+      height: 75px;
+      width: 1px;
+      padding: 1px;
+      background-color: transparent;
+      display: block;
+      position: absolute;
+      top: 125px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  
+    .balloon:after {
+        content: "▲";
+        text-align: center;
+        display: block;
+        position: absolute;
+        color: inherit;
+        top: 120px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+  
+    @keyframes float {
+      from {transform: translateY(100vh);
+      opacity: 1;}
+      to {transform: translateY(-300vh);
+      opacity: 0;}
+    
+    }
+  </style>
+
 </html>
