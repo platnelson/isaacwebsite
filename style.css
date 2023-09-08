@@ -46,9 +46,10 @@ body {
 }
 
 .material-symbols-outlined {
-  position: absolute;
-  top: 9.6%;
-  margin-left: -30px;
+  position: relative;
+  top: 4.5px;
+  margin-top: -10px;
+  margin-right: 3px;
 }
 
 h1 {
