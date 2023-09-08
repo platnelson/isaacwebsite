@@ -31,7 +31,7 @@ body {
 }
 
 #navigation a {
-  width: 160px;
+  width: 180px;
   float: top;
   display: block;
   background-color: var(--Navcolor);
@@ -47,7 +47,7 @@ body {
 
 .material-symbols-outlined {
   position: relative;
-  top: 4.5px;
+  top: 6px;
   margin-top: -10px;
   margin-right: 3px;
 }
