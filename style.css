@@ -1,0 +1,116 @@
+/* This is your CSS file. You will use this file to style your HTML pages */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+/* Background colour */
+body {
+  margin: 20px;
+  background-color: #B89E91;
+}
+
+/* Colours */
+
+:root {
+  --Navcolor: black;
+}
+
+#navigation {
+  list-style-type: none;
+  margin-left: -20px;
+  margin-right: -20px;
+  float: top;
+  overflow: hidden;
+  background-color: var(--Navcolor);
+}
+
+#navigation li {
+  float: left;
+  border: 2px solid var(--Navcolor);
+}
+
+#navigation a {
+  width: 160px;
+  float: top;
+  display: block;
+  background-color: var(--Navcolor);
+  color: aliceblue;
+  text-align: center;
+  padding: 10px;
+  border: 3px solid var(--Navcolor);
+}
+#navigation a:hover {
+  background-color: darkgray;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
+h2 {
+  color: red;
+}
+body {
+  color: black;
+}
+p{
+  font-weight: bold;
+}
+
+footer{
+  font-style: italic;
+}
+/* Balloons adapted from (Jemima, n.d.) */
+#balloon-container {
+ position: absolute; top: 0;
+  height: 100vh;
+  z-index: 100;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  transition: opacity 500ms;
+}
+/* Size of the ballons */
+.balloon {
+  height: 125px;
+  width: 105px;
+  border-radius: 75% 75% 70% 70%;
+}
+
+.balloon:before {
+  content: "";
+  height: 75px;
+  width: 1px;
+  padding: 1px;
+  background-color: transparent;
+  display: block;
+  position: absolute;
+  top: 125px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+/* Size of the ballons */
+.balloon:after {
+    content: "▲";
+    text-align: center;
+    display: block;
+    position: absolute;
+    color: inherit;
+    top: 120px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@keyframes float {
+  from {transform: translateY(100vh);
+  opacity: 1;}
+  to {transform: translateY(-300vh);
+  opacity: 0;}
+
+}
+
+/* References
+Jemima. (n.d.). Floating Balloons. https://codepen.io/Jemimaabu/pen/vYEYdOy */
