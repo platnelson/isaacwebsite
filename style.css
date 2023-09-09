@@ -3,6 +3,32 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
+@media (min-width: 8907px){ 
+
+  .bounce{width:20%;cursor:pointer;}
+
+ 
+  /* Sizeing */
+ 
+ .bounce  a{
+  width:100%;
+  transform:scale(1)
+
+}
+}
+ /* Timing for bounce */
+      .bounce  a{
+        transition: 3s cubic-bezier(0, 0.6, 0.45, 1), 
+         opacity 1200ms 
+         linear 0ms;
+     }
+     
+@media (min-width: 897px){
+
+          .bounce:hover  a{transform:scale(1.2);}
+        
+        }
+
 
 /* Background colour */
 body {
@@ -10,10 +36,9 @@ body {
   background-color: #B89E91;
 }
 
-/* Colours */
-
+/* Colour of nav bar */
 :root {
-  --Navcolor: black;
+  --Navcolor: #402A2C;
 }
 
 #navigation {
@@ -31,11 +56,12 @@ body {
 }
 
 #navigation a {
-  width: 180px;
+  width: 160px;
+  margin-right: 28px;
   float: top;
   display: block;
   background-color: var(--Navcolor);
-  color: aliceblue;
+  color: #A3D9FF;
   text-align: center;
   align-items: center;
   padding: 10px;
@@ -44,6 +70,7 @@ body {
 #navigation a:hover {
   background-color: darkgray;
 }
+
 
 .material-symbols-outlined {
   position: relative;
@@ -56,7 +83,7 @@ h1 {
   font-family: 'Roboto', sans-serif;
 }
 h2 {
-  color: red;
+  color: #703D57;
 }
 body {
   color: black;
@@ -72,7 +99,6 @@ footer{
 #balloon-container {
  position: absolute; top: 0;
   height: 100vh;
-  z-index: 100;
   padding: 1em;
   box-sizing: border-box;
   display: flex;
@@ -120,6 +146,7 @@ footer{
   opacity: 0;}
 
 }
+
 
 /* References
 Jemima. (n.d.). Floating Balloons. https://codepen.io/Jemimaabu/pen/vYEYdOy */

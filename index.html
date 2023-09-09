@@ -10,18 +10,19 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="icon" href="https://i.redd.it/mr-dwight-schrute-in-pixel-art-v0-b1mmv0fdat1b1.png?width=1280&format=png&auto=webp&s=affb681e601500be9278866cb772ca3be51dbd62" type="image/x-icon"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-  <div id="balloon-container" z-index="100"></div>
+  <div id="balloon-container"></div>
 </head>
   <!-- Body with Nav links-->
 <body>
-  <div>
+  <div> 
     <h1>Party Planning Committee</h1>
   </div>
-    <nav id="navigation"> 
+    <nav class="bounce" id="navigation"  z-index="2" > 
       <li><a href="index.html"><span class="material-symbols-outlined">home</span>Home</a></li>
       <li><a href="services.html"><span class="material-symbols-outlined">build</span>Services</a></li>
       <li><a href="faq.html"><span class="material-symbols-outlined">quiz</span>FAQ</a></li>
-     <li><a href="regpay.html"><span class="material-symbols-outlined">event_available</span>Registration and Rental</a></li>
+      <!-- For this last one I had to make the width slighty longer to fit -->
+     <li><a style="width:180px;"href="regpay.html"><span class="material-symbols-outlined">event_available</span>Registration and Rental</a></li>
     </nav>
  <!-- Us an about us section-->
     <section id="home">
@@ -31,7 +32,6 @@
       
     </section>
   </body>
-  
   <footer>
     <p>Copyright © 2023 Party Planning Committee</p>
   </footer>

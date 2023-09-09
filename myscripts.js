@@ -21,7 +21,7 @@ var b = color.b;
 var mt = random(200);
 var ml = random(50);
 // Chnage the speed
-var dur = random(5) + 5;
+var dur = random(2) + 2;
 return `
   background-color: rgba(${r},${g},${b},0.7);
   box-shadow: inset -7px -3px 10px rgba(${r - 10},${g - 10},${b - 10},0.7);
@@ -38,7 +38,7 @@ for (var i = num; i > 0; i--) {
   balloon.style.zIndex = 200;
   balloonContainer.append(balloon);
 // Timeout of the Balloons
-  setTimeout(removeBalloons, 5000);
+  setTimeout(removeBalloons, 1600);
 }
 }
 
