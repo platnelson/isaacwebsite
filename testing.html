@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html>
-  
-  <!-- Header "with icon"-->
 <head>
-  <title>Party Planning Committee</title>
+  <title>Party Planning Committee Registration and Rental</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Style file"-->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="icon" href="https://i.redd.it/mr-dwight-schrute-in-pixel-art-v0-b1mmv0fdat1b1.png?width=1280&format=png&auto=webp&s=affb681e601500be9278866cb772ca3be51dbd62" type="image/x-icon"/>
-  
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 </head>
-  <!-- Body with Nav links-->
 <body>
-  <div class="bounce" id="balloon-container" z-index="100"></div>
-    <h1>Party Planning Committee</h1>
-    <element class="bounce">
-      <nav class="bounce" id="navigation"  z-index="2" > 
+
+  <header>
+    <h1>Party Planning Committee Registration and Rental</h1>
+    <nav class="bounce" id="navigation"> 
       <li><a href="index.html"><span class="material-symbols-outlined">home</span>Home</a></li>
       <li><a href="services.html"><span class="material-symbols-outlined">build</span>Services</a></li>
       <li><a href="faq.html"><span class="material-symbols-outlined">quiz</span>FAQ</a></li>
     <!-- For this last one I had to make the width slighty longer to fit -->
-    <li><a style="width:180px;"href="regpay.html"><span class="material-symbols-outlined">event_available</span>Registration and Rental</a></li>
+    <li><a href="regpay.html"><span class="material-symbols-outlined">event_available</span>Registration and Rental</a></li>
     </nav>
-  </element>
- <!-- Us an about us section-->
-    <section id="home">
-      <h2>About Us</h2>
-      <p>We are a party planning company that specializes in creating unforgettable events for all ages. We offer a wide range of services, including venue selection, catering, entertainment, and more. Our team of experienced professionals will work with you to create a party that is perfect for your needs and budget.</p>
-      <p>Contact us today to learn more about our services and to start planning your next party!</p>
-      
+  </header>
+
+  <main>
+    <section  id="registration-and-rental">
+      <h2>Registration and Rental</h2>
+      <p>To register for a party, please fill out the form below. Once you have registered, you will be able to select the type of party you want to have, including the date and the preferred venue. You will also be able to pay for your party.</p>
+      <form>
+        <input type="text" name="name" placeholder="Your name">
+        <input type="email" name="email" placeholder="Your email address">
+        <input type="text" name="phone" placeholder="Your phone number">
+        <input type="date" name="date" placeholder="Date of party">
+        <select name="venue">
+          <option value="Venue 1">Venue 1</option>
+          <option value="Venue 2">Venue 2</option>
+          <option value="Venue 3">Venue 3</option>
+        </select>
+        <input type="submit" value="Register">
+      </form>
     </section>
-  </body>
-  
+
+  </main>
+
   <footer>
     <p>Copyright © 2023 Party Planning Committee</p>
   </footer>
-   <!-- Script-->
-  <script src="myscripts.js"></script>
 
+</body>
 </html>

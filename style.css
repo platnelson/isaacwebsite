@@ -1,46 +1,45 @@
 /* This is your CSS file. You will use this file to style your HTML pages */
 
 
+/* Colour of the website */
+:root {
+  --Navcolor: #402A2C;
+  --NavText: #A3D9FF;
+  --Navbox: darkgray;
+  --background-color: #B89E91;
+}
+
+/* imports the Roboto font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
-@media (min-width: 8907px){ 
 
-  .bounce{width:20%;cursor:pointer;}
-
- 
-  /* Sizeing */
- 
+ /* Code for the list bounce, CSS code that will be applied to screens that are 0px wide or wider */
+@media (min-width: 0px){ 
+  /* Sizeing what size it starts with */
  .bounce  a{
   width:100%;
   transform:scale(1)
+}
+}
 
-}
-}
- /* Timing for bounce */
+ /* Timing for bounce Using cubic-bezier for a nicer fade*/
       .bounce  a{
         transition: 3s cubic-bezier(0, 0.6, 0.45, 1), 
-         opacity 1200ms 
-         linear 0ms;
+         opacity 1200ms;
      }
-     
-@media (min-width: 897px){
-
-          .bounce:hover  a{transform:scale(1.2);}
-        
+     /* Sizeing what size it ends with */
+@media (min-width: 100px){
+          .bounce:hover  a{transform:scale(1.2);}  
         }
 
 
 /* Background colour */
 body {
   margin: 20px;
-  background-color: #B89E91;
+  background-color: var(--background-color);
 }
 
-/* Colour of nav bar */
-:root {
-  --Navcolor: #402A2C;
-}
-
+/* The color length and style of the navbar */
 #navigation {
   list-style-type: none;
   margin-left: -20px;
@@ -49,29 +48,31 @@ body {
   overflow: hidden;
   background-color: var(--Navcolor);
 }
-
+/* boarder around the text boxes */
 #navigation li {
   float: left;
   border: 2px solid var(--Navcolor);
 }
 
+/* The code styles the navigation bar links to be 160px wide, floated to the top, and with a background color, text color, text alignment, padding, and border. */
 #navigation a {
   width: 160px;
   margin-right: 28px;
   float: top;
   display: block;
   background-color: var(--Navcolor);
-  color: #A3D9FF;
+  color: var(--NavText);
   text-align: center;
   align-items: center;
   padding: 10px;
   border: 3px solid var(--Navcolor);
 }
+
+/* What colour is box when hovering */
 #navigation a:hover {
-  background-color: darkgray;
+  background-color: var(--Navbox);
 }
-
-
+/* Aligning the icon within the navbar */
 .material-symbols-outlined {
   position: relative;
   top: 6px;
@@ -79,22 +80,32 @@ body {
   margin-right: 3px;
 }
 
+/* Text font for h1 */
 h1 {
   font-family: 'Roboto', sans-serif;
 }
+
+/* Text colour for h2 */
 h2 {
   color: #703D57;
 }
+
+/* Text colour for body */
 body {
   color: black;
 }
+
+/* Text style for p */
 p{
   font-weight: bold;
 }
 
+/* Text style for footer */
 footer{
   font-style: italic;
 }
+
+
 /* Balloons adapted from (Jemima, n.d.) */
 #balloon-container {
  position: absolute; top: 0;
@@ -113,8 +124,12 @@ footer{
   border-radius: 75% 75% 70% 70%;
 }
 
+/* Text style for p */
 .balloon:before {
+
+  /*This sets the content of the element to an empty string.*/
   content: "";
+  /* height and width of the ballon */
   height: 75px;
   width: 1px;
   padding: 1px;
@@ -126,6 +141,7 @@ footer{
   right: 0;
   margin: auto;
 }
+
 /* Size of the ballons */
 .balloon:after {
     content: "▲";
