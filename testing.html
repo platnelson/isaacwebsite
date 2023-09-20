@@ -2,17 +2,25 @@
 <html>
 <head>
   <title>Party Planning Committee Registration and Rental</title>
+  <!--  character encoding of an HTML document -->
   <meta charset="utf-8">
+  <!-- Set the width of the viewport to the width of the device's screen -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Style file"-->
   <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Script-->
+ 
+  <!-- linked resource for browers icon -->
   <link rel="icon" href="https://i.redd.it/mr-dwight-schrute-in-pixel-art-v0-b1mmv0fdat1b1.png?width=1280&format=png&auto=webp&s=affb681e601500be9278866cb772ca3be51dbd62" type="image/x-icon"/>
+  <!-- Icons inport for Nav Bar -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <div id="balloon-container"></div>
 </head>
 <body>
 
   <header>
     <h1>Party Planning Committee Registration and Rental</h1>
-    <nav class="bounce" id="navigation"> 
+    <nav class="bounce" id="navigation"  z-index="2" > 
       <li><a href="index.html"><span class="material-symbols-outlined">home</span>Home</a></li>
       <li><a href="services.html"><span class="material-symbols-outlined">build</span>Services</a></li>
       <li><a href="faq.html"><span class="material-symbols-outlined">quiz</span>FAQ</a></li>
@@ -22,21 +30,52 @@
   </header>
 
   <main>
-    <section  id="registration-and-rental">
+    <section>
       <h2>Registration and Rental</h2>
-      <p>To register for a party, please fill out the form below. Once you have registered, you will be able to select the type of party you want to have, including the date and the preferred venue. You will also be able to pay for your party.</p>
-      <form>
-        <input type="text" name="name" placeholder="Your name">
-        <input type="email" name="email" placeholder="Your email address">
-        <input type="text" name="phone" placeholder="Your phone number">
-        <input type="date" name="date" placeholder="Date of party">
-        <select name="venue">
-          <option value="Venue 1">Venue 1</option>
-          <option value="Venue 2">Venue 2</option>
-          <option value="Venue 3">Venue 3</option>
-        </select>
-        <input type="submit" value="Register">
+      <p id="registration-and-rental">To register for a party, please fill out the form below. Once you have registered, you will be able to select the type of party you want to have, including the date and the preferred venue. You will also be able to pay for your party.</p>
+      <form id="form" name= "form" method="post" action="#" onsubmit="return formdone()">
+        <ul>
+          <input type="radio" name="Catered" value="Catered" required>Catered</input> 
+          <input type="radio" name="Catered" value="Catered" required>Non Catered</input>
+        </ul>
+        <h3>Special Requests</h3>
+        <textarea name="message" rows="2" cols="30" placeholder="Special Requests"></textarea>
+        <button type="submit" value="Register">Submit</button>
       </form>
+      <script>
+function formdone() {
+  // Get the form element.
+  var form = document.getElementById("form");
+
+  // Iterate over all the form elements.
+  for (var i = 0; i < form.elements.length; i++) {
+    // If the element is a text input, email input, date input, or select element,
+    // check if it is empty.
+   if (form.elements[i].type === "text" || form.elements[i].type === "email" ||
+            form.elements[i].type === "date" || form.elements[i].type === "tel") {
+   if (form.elements[i].value === "Catered") {
+    if (!form.elements[i].checked) {
+              // If the element is empty, alert the user but do not reset the form.
+              alert("Please fill out all the required fields.");
+              return false;
+            }
+  } 
+  else if (form.elements[i].value === "") {
+            // If the element is empty, alert the user but do not reset the form.
+            alert("Please fill out all the required fields.");
+            return false;
+          }
+    }
+  }
+
+  // If all the form elements are filled, allow the form to submit and display the "Done" message.
+  document.getElementById("form").innerHTML = "Done!";
+  return true;
+}
+
+
+
+      </script>
     </section>
 
   </main>
