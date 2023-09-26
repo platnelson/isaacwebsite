@@ -3,10 +3,11 @@
 
 /* Colour of the website */
 :root {
-  --Navcolor: #402A2C;
-  --NavText: #A3D9FF;
-  --Navbox: darkgray;
-  --background-color: #B89E91;
+  --Navcolor: #002E47;
+  --NavText: #FFBC6B;
+  --Navbox: #6B7FD7;
+  --background-color: #F3F3F3;
+  --formbox: #DC6ACF ;
 }
 
 /* imports the Roboto font from Google Fonts */
@@ -106,33 +107,29 @@ h4 {
 
 #regpay {
   display: grid;
+  grid-template-columns: 1fr 1fr; 
   place-items: center;
-}
+  border-radius: 10px;
+  background-color: gray;
+  margin-top: 30px;
+  padding: 30px;
+ }
+ 
+ footer {
+  padding-left: 10px;
+  padding-bottom: 10px;
+ }
 
-form {
+ #reg,
+ #pay {
   display: flex;
-  margin-right: 50%;
   flex-direction: column;
-  align-items: left;
-  justify-content: left;
   width: 500px;
   border-radius: 10px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-#pay {
-  display: flex;
-  margin-left: 100%;
-  flex-direction: column;
-  align-items: right;
-  justify-content: right;
-  width: 500px;
-  margin-top: -372px;
-  border-radius: 10px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
+  margin-top: 30px;
+  background-color: var(--formbox);
+  padding: 15px;
+ }
 
 input, textarea, select, ul [req] {
   box-sizing: border-box;
@@ -146,11 +143,11 @@ input, textarea, select, ul [req] {
 button {
   background-color: gray;
   color: white;
+  margin-top: 20px;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  float: right;
 }
 
 button:hover {
@@ -179,6 +176,12 @@ footer{
   font-style: italic;
 }
 
+#faq {
+  border-radius: 10px;
+  background-color: gray;
+  margin-top: 30px;
+  padding: 30px;
+}
 
 /* Balloons adapted from (Jemima, n.d.) */
 #balloon-container {
