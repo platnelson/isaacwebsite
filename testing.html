@@ -1,88 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Party Planning Committee Registration and Rental</title>
-  <!--  character encoding of an HTML document -->
-  <meta charset="utf-8">
-  <!-- Set the width of the viewport to the width of the device's screen -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Style file"-->
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <!-- Script-->
- 
-  <!-- linked resource for browers icon -->
-  <link rel="icon" href="https://i.redd.it/mr-dwight-schrute-in-pixel-art-v0-b1mmv0fdat1b1.png?width=1280&format=png&auto=webp&s=affb681e601500be9278866cb772ca3be51dbd62" type="image/x-icon"/>
-  <!-- Icons inport for Nav Bar -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-  <div id="balloon-container"></div>
-</head>
-<body>
-
-  <header>
-    <h1>Party Planning Committee Registration and Rental</h1>
-    <nav class="bounce" id="navigation"  z-index="2" > 
-      <li><a href="index.html"><span class="material-symbols-outlined">home</span>Home</a></li>
-      <li><a href="services.html"><span class="material-symbols-outlined">build</span>Services</a></li>
-      <li><a href="faq.html"><span class="material-symbols-outlined">quiz</span>FAQ</a></li>
-    <!-- For this last one I had to make the width slighty longer to fit -->
-    <li><a style="width: 180px;" href="regpay.html"><span class="material-symbols-outlined">event_available</span>Registration and Rental</a></li>
-    </nav>
-  </header>
-
-  <main>
-    <section>
-      <h2>Registration and Rental</h2>
-      <p id="registration-and-rental">To register for a party, please fill out the form below. Once you have registered, you will be able to select the type of party you want to have, including the date and the preferred venue. You will also be able to pay for your party.</p>
-      <form id="form" name= "form" method="post" action="#" onsubmit="return formdone()">
-        <ul>
-          <input type="radio" name="Catered" value="Catered" required>Catered</input> 
-          <input type="radio" name="Catered" value="Catered" required>Non Catered</input>
-        </ul>
-        <h3>Special Requests</h3>
-        <textarea name="message" rows="2" cols="30" placeholder="Special Requests"></textarea>
-        <button type="submit" value="Register">Submit</button>
-      </form>
-      <script>
-function formdone() {
-  // Get the form element.
-  var form = document.getElementById("form");
-
-  // Iterate over all the form elements.
-  for (var i = 0; i < form.elements.length; i++) {
-    // If the element is a text input, email input, date input, or select element,
-    // check if it is empty.
-   if (form.elements[i].type === "text" || form.elements[i].type === "email" ||
-            form.elements[i].type === "date" || form.elements[i].type === "tel") {
-   if (form.elements[i].value === "Catered") {
-    if (!form.elements[i].checked) {
-              // If the element is empty, alert the user but do not reset the form.
-              alert("Please fill out all the required fields.");
-              return false;
-            }
-  } 
-  else if (form.elements[i].value === "") {
-            // If the element is empty, alert the user but do not reset the form.
-            alert("Please fill out all the required fields.");
-            return false;
-          }
+<script>
+function toggleNumPeopleInput(show) {
+    var numPeopleDiv = document.getElementById("numPeople");
+    var numPeopleInput = document.querySelector("input[name='numPeople']");
+    
+    if (show) {
+        numPeopleDiv.style.display = "block";
+        numPeopleInput.required = true;
+    } else {
+        numPeopleDiv.style.display = "none";
+        numPeopleInput.required = false;
     }
-  }
-
-  // If all the form elements are filled, allow the form to submit and display the "Done" message.
-  document.getElementById("form").innerHTML = "Done!";
-  return true;
+    calculateTotal();
 }
 
+function calculateTotal() {
+    var venueCosts = {
+        "The Hunter Lounge": 200,
+        "Victoria Venues": 250
+    };
 
+    var performerCosts = {
+        "magician": 45,
+        "clown": 55
+    };
 
-      </script>
-    </section>
+    var cateredCostPerPerson = 25;
+    
+    var selectedVenue = document.querySelector("select[name='venue']").value;
+    var selectedPerformer = document.querySelector("select[name='performer']").value;
+    var numPeople = parseInt(document.querySelector("input[name='numPeople']").value);
+    
+    var venueCost = venueCosts[selectedVenue] || 0;
+    var performerCost = performerCosts[selectedPerformer] || 0;
+    var cateredCost = document.querySelector("input[name='Catered']:checked").value === "Catered" ? cateredCostPerPerson * numPeople : 0;
+    
+    var totalCost = venueCost + performerCost + cateredCost;
+    
+    var totalElement = document.getElementById("total");
+    totalElement.textContent = "$" + totalCost;
+}
 
-  </main>
+function paydone() {
+    // Add your logic for handling the payment here.
+    alert("Payment complete!");
+}
 
-  <footer>
-    <p>Copyright © 2023 Party Planning Committee</p>
-  </footer>
-
+</script>
+</head>
+<body>
+<form id="pay" method="post" action="#">
+    <table>
+        <tr>
+            <td>
+                <h3>Pay</h3>
+                <h4><span style="color: #EA001E;">*</span>Date:</h4>
+                <input type="date" name="date" placeholder="Date of party">
+                <br>
+                <h4><span style="color: #EA001E;">*</span>Venue:</h4>
+                <select name="venue" onchange="calculateTotal()">
+                    <option value="None" disabled>Select Venue</option>
+                    <option value="The Hunter Lounge">The Hunter Lounge</option>
+                    <option value="Victoria Venues">Victoria Venues</option>
+                </select>
+                <h4><span style="color: #EA001E;">*</span>Performer:</h4>
+                <select name="performer" onchange="calculateTotal()">
+                    <option value="None" disabled>Select Performer</option>
+                    <option value="magician">Magician</option>
+                    <option value="clown">Clown</option>
+                </select>
+                <h4><span style="color: #EA001E;">*</span>Catered:</h4>
+                <ul id="req">
+                    <input type="radio" name="Catered" value="Catered" checked required onchange="toggleNumPeopleInput(true)">Catered
+                    <input type="radio" name="Catered" value="Non Catered" required onchange="toggleNumPeopleInput(false)">Non Catered
+                </ul>
+                <div id="numPeople">
+                    <h4><span style="color: #EA001E;">*</span>How many people?</h4>
+                    <input type="number" name="numPeople" min="1" required onchange="calculateTotal()">
+                </div>
+            </td>
+            <td id="totalpay">
+                <h3>Total:</h3>
+                <h4 id="total"> </h4>
+            </td>
+        </tr>
+    </table>
+    <h3>Special Requests:</h3>
+    <textarea name="message" rows="2" cols="30" placeholder="Special Requests"></textarea>
+    <button type="button" onclick="paydone()">Pay</button>
+</form>
 </body>
 </html>

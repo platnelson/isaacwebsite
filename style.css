@@ -6,8 +6,9 @@
   --Navcolor: #002E47;
   --NavText: #FFBC6B;
   --Navbox: #6B7FD7;
-  --background-color: #F3F3F3;
-  --formbox: #DC6ACF ;
+  --background-color: #F1EEE6;
+  --formbox: #F2C3C3;
+  --pagebox: #4692C7;
 }
 
 /* imports the Roboto font from Google Fonts */
@@ -89,11 +90,11 @@ h1 {
 
 /* Text colour for h2 */
 h2 {
-  color: #703D57;
+  color: #7F284F;
 }
 
 h3 {
-  color: black;
+  color: #7F284F;
   font-size: 25px;
   margin: 0;
   padding: 5px;
@@ -104,24 +105,14 @@ h4 {
   padding: 2px;
   padding-top: 16px;
 }
-
-#regpay {
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  place-items: center;
-  border-radius: 10px;
-  background-color: gray;
-  margin-top: 30px;
-  padding: 30px;
- }
  
- footer {
-  padding-left: 10px;
+ footer, td {
+  padding-left: 20px;
   padding-bottom: 10px;
  }
 
  #reg,
- #pay {
+ #pay, #faqform {
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -130,6 +121,8 @@ h4 {
   background-color: var(--formbox);
   padding: 15px;
  }
+
+
 
 input, textarea, select, ul [req] {
   box-sizing: border-box;
@@ -170,19 +163,35 @@ p{
 }
 
 /* Text style for footer */
-footer{
-  position: absolute; bottom: 10px;
-
+footer {
+  position: fixed;
+  bottom: 1px;
   font-style: italic;
+  padding-left: 20px;
+  padding-bottom: 10px;
 }
 
-#faq {
+#faq, #services {
   border-radius: 10px;
-  background-color: gray;
+  background-color: var(--pagebox);
   margin-top: 30px;
   padding: 30px;
 }
 
+#regpay{
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background-color: var(--pagebox);
+  margin-top: 30px;
+ }
+
+ #totalpay {
+  padding: 12px 20px;
+  background-color: gray;
+  border-radius: 10px;
+
+ }
 /* Balloons adapted from (Jemima, n.d.) */
 #balloon-container {
  position: absolute; top: 0;

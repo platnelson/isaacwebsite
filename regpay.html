@@ -2,17 +2,13 @@
 <html>
   <head>
     <title>Party Planning Committee FAQ</title>
-    <meta charset="utf-8">
-    <!--  character encoding of an HTML document -->
-    <meta charset="utf-8">
-    <!-- Set the width of the viewport to the width of the device's screen -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Style file"-->
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- linked resource for browers icon -->
     <link rel="icon" href="https://i.redd.it/mr-dwight-schrute-in-pixel-art-v0-b1mmv0fdat1b1.png?width=1280&format=png&auto=webp&s=affb681e601500be9278866cb772ca3be51dbd62" type="image/x-icon"/>
     <!-- Icons inport for Nav Bar -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <script src="myscripts.js"> </script>
   </head>
 <body>
 
@@ -33,6 +29,12 @@
       <br>
       <h3 id="registration-and-rental">To register for a party, just complete the form below and we will respond ASAP with next steps!</h3>
       <br>
+      <table>
+        <tr> <!-- table row -->
+          <td> <!-- table column -->
+          
+          </td>
+          <td>
       <form id="reg" method="post" action="#">
         <h3>Registration</h3>
         <h4><span style="color: #EA001E;">*</span>Name </h4>
@@ -41,38 +43,60 @@
         <input type="email" name="email" placeholder="Your email address">
         <h4><span style="color: #EA001E;">*</span>Phone Number</h4>
         <input type="tel" name="phone" placeholder="Your phone number">
-        <button type="button" onclick="regdone()" value="Register">Submit</button>
+        <button type="button" onclick="regdone()" value="Register">Register</button>
       </form>
+    </td>
+      <td>
+        <form id="pay" method="post" action="#">
+          <table>
+              <tr>
+                  <td>
+                      <h3>Pay</h3>
+                      <h4><span style="color: #EA001E;">*</span>Date:</h4>
+                      <input type="date" name="date" placeholder="Date of party">
+                      <br>
+                      <h4><span style="color: #EA001E;">*</span>Venue:</h4>
+                      <select name="venue" onchange="calculateTotal()">
+                          <option value="None" disabled>Select Venue</option>
+                          <option value="The Hunter Lounge">The Hunter Lounge</option>
+                          <option value="Victoria Venues">Victoria Venues</option>
+                      </select>
+                      <h4><span style="color: #EA001E;">*</span>Performer:</h4>
+                      <select name="performer" onchange="calculateTotal()">
+                          <option value="None" disabled>Select Performer</option>
+                          <option value="magician">Magician</option>
+                          <option value="clown">Clown</option>
+                      </select>
+                      <h4><span style="color: #EA001E;">*</span>Catered:</h4>
+                      <ul id="req">
+                          <input type="radio" name="Catered" value="Catered" checked required onchange="toggleNumPeopleInput(true)">Catered
+                          <input type="radio" name="Catered" value="Non Catered" required onchange="toggleNumPeopleInput(false)">Non Catered
+                      </ul>
+                      <div id="numPeople">
+                          <h4><span style="color: #EA001E;">*</span>How many people?</h4>
+                          <input type="number" name="numPeople" min="1" max="50" required onchange="calculateTotal()">
+                      </div>
+                  </td>
+                  <td id="totalpay">
+                      <h3>Total:</h3>
+                      <h4 id="total"> </h4>
+                  </td>
+              </tr>
+          </table>
+          <h3>Special Requests:</h3>
+          <textarea name="message" rows="2" cols="30" placeholder="Special Requests"></textarea>
+          <button type="button" onclick="paydone()">Pay</button>
+      </form>
+        
+      
+    </td>
+  </tr>
+</table>
 
-      <form id="pay" method="post" action="#" >
-        <h3>Pay</h3>
-        <h4><span style="color: #EA001E;">*</span>Date </h4>
-        <input type="date" name="date" placeholder="Date of party">
-        <br>
-        <h4><span style="color: #EA001E;">*</span>Venues </h4>
-        <select name="venue">
-          <option value="None" disabled>Select Venue</option>
-          <option value="Amusement park">Amusement park</option>
-          <option value="Farm">Farm</option>
-          <option value="Park">Park</option>
-        </select>
-        <h4><span style="color: #EA001E;">*</span>Performer </h4>
-        <select name="erformer">
-          <option value="None" disabled> Select Performer </option>
-          <option value="magician">Magician</option>
-          <option value="clown">Clown</option>
-        </select>
-        <h4><span style="color: #EA001E;">*</span>Catered </h4>
-        <ul>
-          <input type="radio" name="Catered" value="Catered" checked required>Catered</input> 
-          <input type="radio" name="Catered" value="Catered" required>Non Catered</input>
-        </ul id="req">
-        <h3>Special Requests</h3>
-        <textarea name="message" rows="2" cols="30" placeholder="Special Requests"></textarea>
-        <button type="submit" value="Register">Submit</button>
-      </form>
-      <script src="myscripts.js"> </script>
     </section>
+
+   
+
       
   </main>
 
