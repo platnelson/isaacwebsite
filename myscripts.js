@@ -167,22 +167,24 @@ function faqdone() {
   // Get the form element.
   var form = document.getElementById("faqform");
 
-  // Iterate over all the form elements.
+  // Loop over all the form elements.
   for (var i = 0; i < form.elements.length; i++) {
-    // If the element is a text input, email input, date input, or select element,
+    // If the element is a text input, tel input, textarea input.
     // check if it is empty.
    if (form.elements[i].type === "text" || form.elements[i].type === "tel" ||
    form.elements[i].type === "textarea") {
     // If the element is empty, alert the user but do not reset the form.
           if (form.elements[i].value === "") {
             alert("Please fill out all the required fields.");
+            // Ends loop.
             return false;
       }
     }
   }
 
   // If all the form elements are filled, allow the form to submit and display the "Done" message.
-  document.getElementById("faqform").innerHTML = "Thanks!, We'll get abck to you as soon as possible.";
+  document.getElementById("faqform").innerHTML = "Thanks!, We'll get back to you as soon as possible.";
+  // Ends loop.
   return true;
 }
 
