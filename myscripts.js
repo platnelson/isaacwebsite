@@ -76,7 +76,7 @@ function regdone() {
   }
 
   // If all the form elements are filled, allow the form to submit and display the "Done" message.
-  document.getElementById("reg").innerHTML = "Registration, successful!";
+  document.getElementById("reg").innerHTML = "Registration successful!";
   return true;
 }
 
@@ -157,7 +157,7 @@ function paydone() {
   }
 
   // If all the form elements are filled, allow the form to submit and display the "Done" message.
-  document.getElementById("pay").innerHTML = "Payment, Successful!";
+  document.getElementById("pay").innerHTML = "Payment successful!";
   return true;
 }
 

@@ -2,17 +2,18 @@
 
 
 /* Colour of the website */
+
+/*FFBC6B*/
+
 :root {
   --Navcolor: #002E47;
   --NavText: #FFBC6B;
   --Navbox: #6B7FD7;
-  --background-color: #F1EEE6;
-  --formbox: #F2C3C3;
-  --pagebox: #4692C7;
+  --background-color: #002456;
+  --formbox: rgb(205, 205, 205);
+  --pagebox: #F1EEE6;
+  --subfont: #030214;
 }
-
-/* imports the Roboto font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
 
  /* Code for the list bounce, CSS code that will be applied to screens that are 0px wide or wider */
@@ -84,23 +85,27 @@ body {
 
 /* Text font for h1 */
 h1 {
-  font-family: 'Roboto', sans-serif;
+  color: #F1EEE6;
+  font-family: 'arial', sans-serif;
   
 }
 
 /* Text colour for h2 */
 h2 {
-  color: #7F284F;
+  font-family: 'arial', sans-serif;
+  color: var(--Navcolor);
 }
 
 h3 {
-  color: #7F284F;
+  font-family: 'arial', sans-serif;
+  color: var(--Navcolor);
   font-size: 25px;
   margin: 0;
   padding: 5px;
 }
 
 h4 {
+  font-family: 'arial', sans-serif;
   margin: 0;
   padding: 2px;
   padding-top: 16px;
@@ -171,7 +176,7 @@ footer {
   padding-bottom: 10px;
 }
 
-#faq, #services {
+#faq, #services, #home {
   border-radius: 10px;
   background-color: var(--pagebox);
   margin-top: 30px;
