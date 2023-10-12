@@ -4,8 +4,7 @@
 /* Colour of the website */
 
 /*FFBC6B*/
-
-:root {
+/*:root {
   --Navcolor: #002E47;
   --NavText: #FFBC6B;
   --Navbox: #6B7FD7;
@@ -13,6 +12,16 @@
   --formbox: rgb(205, 205, 205);
   --pagebox: #F1EEE6;
   --subfont: #030214;
+}
+*/
+:root {
+  --Navcolor: #002E47;
+  --NavText: #FFBC6B;
+  --Navbox: #6B7FD7;
+  --background-color: #BCF4F5;
+  --formbox: #BCF4F5;
+  --pagebox: #D3FAC7;
+  --subfont: #BCF4F5;
 }
 
 
@@ -75,7 +84,7 @@ body {
 #navigation a:hover {
   background-color: var(--Navbox);
 }
-/* Aligning the icon within the navbar */
+/* Aligning the "icons" within the navbar */
 .material-symbols-outlined {
   position: relative;
   top: 6px;
@@ -83,9 +92,10 @@ body {
   margin-right: 3px;
 }
 
+
 /* Text font for h1 */
 h1 {
-  color: #F1EEE6;
+  color: #fa92a3;
   font-family: 'arial', sans-serif;
   
 }
@@ -96,6 +106,7 @@ h2 {
   color: var(--Navcolor);
 }
 
+/* Text colour for h3 */
 h3 {
   font-family: 'arial', sans-serif;
   color: var(--Navcolor);
@@ -104,11 +115,16 @@ h3 {
   padding: 5px;
 }
 
+/* Text colour for h4 */
 h4 {
   font-family: 'arial', sans-serif;
   margin: 0;
   padding: 2px;
   padding-top: 16px;
+}
+
+p {
+  margin-top: 2px;
 }
  
  footer, td {
@@ -122,11 +138,9 @@ h4 {
   flex-direction: column;
   width: 500px;
   border-radius: 10px;
-  margin-top: 30px;
   background-color: var(--formbox);
   padding: 15px;
  }
-
 
 
 input, textarea, select, ul [req] {
@@ -176,6 +190,7 @@ footer {
   padding-bottom: 10px;
 }
 
+/*Apply the following CSS properties*/
 #faq, #services, #home {
   border-radius: 10px;
   background-color: var(--pagebox);
@@ -192,11 +207,13 @@ footer {
  }
 
  #totalpay {
+  display: grid;
+  place-items: center;
   padding: 12px 20px;
-  background-color: gray;
+  background-color: rgb(197, 197, 197);
   border-radius: 10px;
-
  }
+
 /* Balloons adapted from (Jemima, n.d.) */
 #balloon-container {
  position: absolute; top: 0;
@@ -215,6 +232,9 @@ footer {
   border-radius: 75% 75% 70% 70%;
 }
 
+td {
+  vertical-align: top;
+}
 
 .balloon:before {
 
@@ -245,6 +265,7 @@ footer {
     right: 0;
     margin: auto;
 }
+
 
 @keyframes float {
   from {transform: translateY(100vh);

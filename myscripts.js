@@ -9,9 +9,9 @@ return Math.floor(Math.random() * num);d
 }
 // Chnage the colours
 const colors = [
-{ r: 121, g: 78, b: 58 },
-{ r: 0, g: 0, b: 0 },
-{ r: 101, g: 96, b: 89 },
+{ r: 255, g: 183, b: 195 },
+{ r: 161, g: 234, b: 255 },
+{ r: 217, g: 242, b: 100 },
 ];
 
 function getRandomStyles() {
@@ -67,6 +67,7 @@ function regdone() {
     // check if it is empty.
    if (form.elements[i].type === "text" || form.elements[i].type === "email" ||
             form.elements[i].type === "tel") {
+              //("How to get type of a textarea," n.d.)
               // If the element is empty, alert the user but do not reset the form.
           if (form.elements[i].value === "") {
             alert("Please fill out all the required fields.");
@@ -145,9 +146,11 @@ function paydone() {
     // check if it is empty.
     if (
       form.elements[i].type === "date" ||
+      form.elements[i].type === "time" ||
       form.elements[i].type === "radio" ||
       (form.elements[i].type === "number" && form.elements[i].name !== "numPeople")
     ) {
+       //("How to get type of a textarea," n.d.)
       // If the element is empty, alert the user but do not reset the form.
       if (form.elements[i].value === "") {
         alert("Please fill out all the required fields.");
@@ -162,7 +165,6 @@ function paydone() {
 }
 
 
-
 function faqdone() {
   // Get the form element.
   var form = document.getElementById("faqform");
@@ -171,6 +173,7 @@ function faqdone() {
   for (var i = 0; i < form.elements.length; i++) {
     // If the element is a text input, tel input, textarea input.
     // check if it is empty.
+     //("How to get type of a textarea," n.d.)
    if (form.elements[i].type === "text" || form.elements[i].type === "tel" ||
    form.elements[i].type === "textarea") {
     // If the element is empty, alert the user but do not reset the form.

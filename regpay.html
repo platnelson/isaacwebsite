@@ -29,6 +29,7 @@
       <br>
       <h3 id="registration-and-rental">To register for a party, just complete the form below and we will respond ASAP with next steps!</h3>
       <br>
+
       <table>
         <tr> <!-- table row -->
           <td> <!-- table column -->
@@ -54,6 +55,8 @@
                       <h3>Pay</h3>
                       <h4><span style="color: #EA001E;">*</span>Date:</h4>
                       <input type="date" name="date" placeholder="Date of party">
+                      <h4><span style="color: #EA001E;">*</span>Time:</h4>
+                      <input type="time" name="time" placeholder="Time">
                       <br>
                       <h4><span style="color: #EA001E;">*</span>Venue:</h4>
                       <select name="venue" onchange="calculateTotal()">
@@ -64,8 +67,8 @@
                       <h4><span style="color: #EA001E;">*</span>Performer:</h4>
                       <select name="performer" onchange="calculateTotal()">
                           <option value="None" disabled>Select Performer</option>
-                          <option value="magician">Magician</option>
-                          <option value="clown">Clown</option>
+                          <option value="magician">Magician ($45)</option>
+                          <option value="clown">Clown ($55)</option>
                       </select>
                       <h4><span style="color: #EA001E;">*</span>Catered:</h4>
                       <ul id="req">
