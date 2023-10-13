@@ -2,26 +2,14 @@
 
 
 /* Colour of the website */
-
-/*FFBC6B*/
-/*:root {
-  --Navcolor: #002E47;
-  --NavText: #FFBC6B;
-  --Navbox: #6B7FD7;
-  --background-color: #002456;
-  --formbox: rgb(205, 205, 205);
-  --pagebox: #F1EEE6;
-  --subfont: #030214;
-}
-*/
 :root {
   --Navcolor: #002E47;
   --NavText: #FFBC6B;
   --Navbox: #6B7FD7;
-  --background-color: #BCF4F5;
-  --formbox: #BCF4F5;
-  --pagebox: #D3FAC7;
-  --subfont: #BCF4F5;
+  --background-color: #11497a;
+  --formbox: rgb(205, 205, 205);
+  --pagebox: #F1EEE6;
+  --subfont: #030214;
 }
 
 
@@ -212,7 +200,7 @@ footer {
   display: grid;
   place-items: center;
   padding: 12px 20px;
-  background-color: rgb(197, 197, 197);
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
  }
 
