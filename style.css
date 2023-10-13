@@ -115,7 +115,7 @@ h3 {
   padding: 5px;
 }
 
-/* Text colour for h4 */
+/* Text font and padding for h4 */
 h4 {
   font-family: 'arial', sans-serif;
   margin: 0;
@@ -123,10 +123,12 @@ h4 {
   padding-top: 16px;
 }
 
+/* Margin for p */
 p {
   margin-top: 2px;
 }
  
+/* Margin for p */
  footer, td {
   padding-left: 20px;
   padding-bottom: 10px;
@@ -181,7 +183,7 @@ p{
   width: 600px;
 }
 
-/* Text style for footer */
+/* Text properties for footer */
 footer {
   position: fixed;
   bottom: 1px;

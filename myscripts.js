@@ -1,61 +1,6 @@
 /* This is your JavaScript file. You will use this file to create actions in your HTML pages */
-// Jemima, n.d.) //
 
 
-const balloonContainer = document.getElementById("balloon-container");
-  
-function random(num) {
-return Math.floor(Math.random() * num);d
-}
-// Chnage the colours
-const colors = [
-{ r: 255, g: 183, b: 195 },
-{ r: 161, g: 234, b: 255 },
-{ r: 217, g: 242, b: 100 },
-];
-
-function getRandomStyles() {
-var color = colors[Math.floor(Math.random() * colors.length)];
-var r = color.r;
-var g = color.g;
-var b = color.b;
-var mt = random(200);
-var ml = random(50);
-// Chnage the speed
-var dur = random(3) + 3;
-return `
-  background-color: rgba(${r},${g},${b},0.7);
-  box-shadow: inset -7px -3px 10px rgba(${r - 10},${g - 10},${b - 10},0.7);
-  margin: ${mt}px 0 0 ${ml}px;
-  animation: float ${dur}s ease-in infinite`;
-}
-
-function createBalloons(num) {
-for (var i = num; i > 0; i--) {
-  var balloon = document.createElement("div");
-  balloon.className = "balloon";
-  balloon.style.cssText = getRandomStyles();
-  balloon.style.zIndex = 200;
-  balloonContainer.append(balloon);
-// Timeout of the Balloons
-  setTimeout(removeBalloons, 1600);
-}
-}
-
-function removeBalloons() {
-balloonContainer.style.opacity = 0;
-setTimeout(() => {
-  balloonContainer.remove()
-}, 500)
-}
-// How many balloons
-window.addEventListener("load", () => {
-createBalloons(17)
-});
-
-window.addEventListener("click", () => {
-removeBalloons();
-});
 
 function regdone() {
   // Get the form element.
@@ -81,11 +26,12 @@ function regdone() {
   return true;
 }
 
-
+//Changes the Webpage if Catered or non Catered.
 function toggleNumPeopleInput(show) {
   var numPeopleDiv = document.getElementById("numPeople");
   var numPeopleInput = document.querySelector("input[name='numPeople']");
-  
+
+  //If not selected it's not calulated for the Catered.
   if (show) {
       numPeopleDiv.style.display = "block";
       numPeopleInput.required = true;
@@ -96,29 +42,34 @@ function toggleNumPeopleInput(show) {
   calculateTotal();
 }
 
+//Calculating how much it costs.
 function calculateTotal() {
+  //How much each venue costs
   var venueCosts = {
       "The Hunter Lounge": 200,
       "Victoria Venues": 250
   };
-
+//How much each performer costs
   var performerCosts = {
       "magician": 45,
       "clown": 55
   };
 
+//What each person costs if catered
   var cateredCostPerPerson = 25;
-  
+  //Calculates the total cost of a party, given the venue, performer, and number of people attending the party.
   var selectedVenue = document.querySelector("select[name='venue']").value;
   var selectedPerformer = document.querySelector("select[name='performer']").value;
   var numPeople = parseInt(document.querySelector("input[name='numPeople']").value);
   
+  //Cost of blanked out option, this is Stylistic, and cannot be selected
   var venueCost = venueCosts[selectedVenue] || 0;
   var performerCost = performerCosts[selectedPerformer] || 0;
+  // Math calculating the catered cost.
   var cateredCost = document.querySelector("input[name='Catered']:checked").value === "Catered" ? cateredCostPerPerson * numPeople : 0;
-  
+    // Math calculating the Total cost.
   var totalCost = venueCost + performerCost + cateredCost;
-  
+   // Showing the Total cost.
   var totalElement = document.getElementById("total");
   totalElement.textContent = "$" + totalCost;
 }
@@ -190,6 +141,65 @@ function faqdone() {
   // Ends loop.
   return true;
 }
+
+
+// Jemima, n.d.) //
+const balloonContainer = document.getElementById("balloon-container");
+  
+function random(num) {
+return Math.floor(Math.random() * num);d
+}
+// Chnage the colours
+const colors = [
+{ r: 255, g: 183, b: 195 },
+{ r: 161, g: 234, b: 255 },
+{ r: 217, g: 242, b: 100 },
+];
+
+function getRandomStyles() {
+var color = colors[Math.floor(Math.random() * colors.length)];
+var r = color.r;
+var g = color.g;
+var b = color.b;
+var mt = random(200);
+var ml = random(50);
+// Chnage the speed
+var dur = random(3) + 3;
+return `
+  background-color: rgba(${r},${g},${b},0.7);
+  box-shadow: inset -7px -3px 10px rgba(${r - 10},${g - 10},${b - 10},0.7);
+  margin: ${mt}px 0 0 ${ml}px;
+  animation: float ${dur}s ease-in infinite`;
+}
+
+function createBalloons(num) {
+for (var i = num; i > 0; i--) {
+  var balloon = document.createElement("div");
+  balloon.className = "balloon";
+  balloon.style.cssText = getRandomStyles();
+  balloon.style.zIndex = 200;
+  balloonContainer.append(balloon);
+// Timeout of the Balloons
+  setTimeout(removeBalloons, 1600);
+}
+}
+// Timeout of the Balloons
+function removeBalloons() {
+balloonContainer.style.opacity = 0;
+setTimeout(() => {
+  balloonContainer.remove()
+}, 500)
+}
+// How many balloons
+window.addEventListener("load", () => {
+createBalloons(17)
+});
+
+window.addEventListener("click", () => {
+removeBalloons();
+});
+
+
 
 
 
